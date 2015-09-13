@@ -1,0 +1,23 @@
+{
+  "name": "wom",
+  "version": "0.1.0",
+  "description": "wom wom",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesyllable/wom.git"
+  },
+  "author": "Erwin Ocampo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thesyllable/wom/issues"
+  },
+  "homepage": "https://github.com/thesyllable/wom#readme"
+}
