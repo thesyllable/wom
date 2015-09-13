@@ -4,9 +4,13 @@
   "description": "wom wom",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.13.3"
+    "bower": "^1.5.2",
+    "express": "^4.13.3",
+    "yo": "^1.4.8"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp-bower": "0.0.10"
+  },
   "scripts": {
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
