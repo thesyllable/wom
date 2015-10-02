@@ -4,7 +4,7 @@ var app = express();
 
 
 app.get('/', function (req, res) {
-  res.sendFile('index.html',{ root : __dirname});
+  res.sendFile('gameofwar.html',{ root : __dirname});
 });
 
 var server = app.listen(process.env.PORT, function () {
