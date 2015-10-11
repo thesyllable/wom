@@ -1,11 +1,18 @@
+'use strict';
+
+
 var express = require('express');
 var app = express();
 
 
-
 app.get('/', function (req, res) {
-  res.sendFile('gameofwar.html',{ root : __dirname});
+  res.sendFile('about.html',{ root : __dirname});
 });
+
+app.get('/js/reactapp.js', function (req, res) {
+  res.sendFile('reactapp.js',{ root : __dirname});
+});
+
 
 var server = app.listen(process.env.PORT, function () {
   var host = server.address().address;
