@@ -42,41 +42,32 @@ var JQueryMobileContent = React.createClass({
 });
 JQueryMobileContent = React.createFactory(JQueryMobileContent);
 
-/** jQuery Mobile footer component. */
-var JQueryMobileFooter = React.createClass({
-  displayName: 'JQueryMobileFooter',
+/** jQuery Mobile navbar list items. 
+var JQueryMobileNavbarItems = React.createClass({
+  displayName: 'JQueryMobileNavbarItems',
 
   render: function() {
-    return React.DOM.div({'data-role':'footer'},
-      React.DOM.h4(null, 'Page footer')
-    );
-  }
-});
-JQueryMobileFooter = React.createFactory(JQueryMobileFooter);
-
-/** jQuery Mobile header component. */
-var JQueryMobileHeader = React.createClass({
-  displayName: 'JQueryMobileHeader',
-
-  render: function() {
-    return React.DOM.div({'data-role':'header', 'data-theme':this.props.headerTheme},
-      React.DOM.h1(null, this.props.title)
-    );
-  }
-});
-JQueryMobileHeader = React.createFactory(JQueryMobileHeader);
+    return React.DOM.li(null, React.DOM.a({href:'#two'},'page two')),
+        React.DOM.li(null, React.DOM.a({href:'#popup'},'popup'))
+}
+JQueryMobileNavbarItems = React.createFactory(JQueryMobileNavbarItems);
+*/
 
 /** jQuery Mobile navbar component. */
 var JQueryMobileNavbar = React.createClass({
   displayName: 'JQueryMobileNavbar',
 
   render: function() {
-    return React.DOM.div({'data-role':'navbar', 'data-theme':this.props.headerTheme},
-      React.DOM.ul(null, React.DOM.li(null, React.DOM.a({href:'#'},'link')))
-    );
+    return React.DOM.div({'data-role':'navbar'},
+      React.DOM.ul(null,
+        React.DOM.li(null,
+          React.DOM.a({href:'#two'},'Page two')
+            )
+          )
+        );
   }
 });
-JQueryMobileHeader = React.createFactory(JQueryMobileNavbar);
+JQueryMobileNavbar = React.createFactory(JQueryMobileNavbar);
 
 
 /** jQuery Mobile page component. */
@@ -84,7 +75,7 @@ var JQueryMobilePage = React.createClass({
   displayName: 'JQueryMobilePage',
 
   getDefaultProps: function() {
-    return {'data-role':'page', 'data-theme':'a', headerTheme:'a'};
+    return {'data-role':'page', 'data-theme':'a'};
   },
 
   render: function() {
@@ -93,9 +84,8 @@ var JQueryMobilePage = React.createClass({
       props[key] = this.props[key];
     }
     return React.DOM.div(props,
-      JQueryMobileHeader({title:'Page ' + this.props.id, headerTheme:this.props.headerTheme}),
-      JQueryMobileContent(null, this.props.children),
-      JQueryMobileFooter(null)
+      JQueryMobileNavbar(null, this.props.id),
+      JQueryMobileContent(null, this.props.children)
     );
   }
 });
