@@ -14,7 +14,7 @@ app.get('/js/reactapp.js', function (req, res) {
 });
 
 
-var server = app.listen(4000, function () { //process.env.PORT
+var server = app.listen(process.env.PORT, function () { //process.env.PORT
   var host = server.address().address;
   var port = server.address().port;
 
