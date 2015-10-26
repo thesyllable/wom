@@ -4,8 +4,7 @@
   "description": "wom wom",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.13.3",
-    "jira-connector": "^1.7.0"
+    "express": "^4.13.3"
   },
   "devDependencies": {},
   "scripts": {
